@@ -456,7 +456,7 @@ namespace Portable_Opera_Updater
                             }
                             if (!File.Exists($"{applicationPath}\\{instDir[d]} Launcher.exe"))
                             {
-                                File.Copy($"{@applicationPath}\\Bin\\Launcher\\{instDir[d]} Launcher.exe", $"{applicationPath}\\{instDir[d]} Launcher.exe");
+                                File.Copy($"{@applicationPath}\\Bin\\Launcher\\{instDir[d]} Launcher.exe", $"{applicationPath}\\{instDir[d]} Launcher.exe", true);
                             }
                             if (File.Exists($"{applicationPath}\\Opera_{buildVersion[a]}_{ring[a]}_{arch[b]}.exe"))
                             {
@@ -989,7 +989,7 @@ namespace Portable_Opera_Updater
                         {
                             using (WebClient myWebClient2 = new WebClient())
                             {
-                                myWebClient2.DownloadFile("https://github.com/UndertakerBen/PorOperaUpd/raw/master/Launcher/Launcher.7z", applicationPath + "\\Launcher.7z");
+                                myWebClient2.DownloadFile("https://github.com/burnhardo/PorOperaUpd/raw/master/Launcher/Launcher.7z", applicationPath + "\\Launcher.7z");
                             }
                             string arguments = " x \"" + applicationPath + "\\Launcher.7z" + " -o\"" + applicationPath + "\\Bin\\Launcher\" -y";
                             Process process = new Process();
