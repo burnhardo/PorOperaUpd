@@ -74,15 +74,15 @@ namespace Portable_Opera_Updater
             }
             if (IntPtr.Size == 8)
             {
-                if (File.Exists($"{applicationPath}\\{instDir[4]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[5]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[6]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[7]}\\launcher.exe"))
+                if (File.Exists($"{applicationPath}\\{instDir[4]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[5]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[6]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[7]}\\opera.exe"))
                 {
                     checkBox2.Enabled = false;
                 }
-                if (File.Exists($"{applicationPath}\\{instDir[0]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[1]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[2]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[3]}\\launcher.exe"))
+                if (File.Exists($"{applicationPath}\\{instDir[0]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[1]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[2]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[3]}\\opera.exe"))
                 {
                     checkBox1.Enabled = false;
                 }
-                if (File.Exists($"{applicationPath}\\{instDir[0]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[1]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[2]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[3]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[4]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[5]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[6]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[7]}\\launcher.exe"))
+                if (File.Exists($"{applicationPath}\\{instDir[0]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[1]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[2]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[3]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[4]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[5]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[6]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[7]}\\opera.exe"))
                 {
                     checkBox3.Checked = true;
                     button9.BackColor = Color.FromArgb(244, 244, 244);
@@ -95,7 +95,7 @@ namespace Portable_Opera_Updater
                     button9.Enabled = false;
                     button9.BackColor = Color.FromArgb(244, 244, 244);
 
-                    if (File.Exists(applicationPath + "\\Opera\\launcher.exe"))
+                    if (File.Exists(applicationPath + "\\Opera\\opera.exe"))
                     {
                         CheckButtonSingle();
                     }
@@ -103,7 +103,7 @@ namespace Portable_Opera_Updater
             }
             else if (IntPtr.Size != 8)
             {
-                if (File.Exists($"{applicationPath}\\{instDir[0]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[1]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[2]}\\launcher.exe") || File.Exists($"{applicationPath}\\{instDir[3]}\\launcher.exe"))
+                if (File.Exists($"{applicationPath}\\{instDir[0]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[1]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[2]}\\opera.exe") || File.Exists($"{applicationPath}\\{instDir[3]}\\opera.exe"))
                 {
                     checkBox3.Checked = true;
                     checkBox1.Enabled = false;
@@ -114,7 +114,7 @@ namespace Portable_Opera_Updater
                     checkBox1.Enabled = false;
                     button9.Enabled = false;
                     button9.BackColor = Color.FromArgb(244, 244, 244);
-                    if (File.Exists($"{applicationPath}\\Opera\\launcher.exe"))
+                    if (File.Exists($"{applicationPath}\\Opera\\opera.exe"))
                     {
                         CheckButtonSingle();
                     }
@@ -416,11 +416,11 @@ namespace Portable_Opera_Updater
                             process.StartInfo.Arguments = arguments;
                             process.Start();
                             process.WaitForExit();
-                            if ((File.Exists($"{applicationPath}\\Update\\{instDir[d]}\\launcher.exe")) && (File.Exists($"{applicationPath}\\{instDir[d]}\\updates\\Version.log")))
+                            if ((File.Exists($"{applicationPath}\\Update\\{instDir[d]}\\opera.exe")) && (File.Exists($"{applicationPath}\\{instDir[d]}\\updates\\Version.log")))
                             {
                                 string instTVersion = File.ReadAllText($"{applicationPath}\\{instDir[d]}\\updates\\Version.log");
                                 string[] instVersion = File.ReadAllText($"{applicationPath}\\{instDir[d]}\\updates\\Version.log").Split(new char[] { '|' });
-                                FileVersionInfo testm = FileVersionInfo.GetVersionInfo($"{applicationPath}\\Update\\{instDir[d]}\\launcher.exe");
+                                FileVersionInfo testm = FileVersionInfo.GetVersionInfo($"{applicationPath}\\Update\\{instDir[d]}\\opera.exe");
                                 if (checkBox3.Checked)
                                 {
                                     if (testm.FileVersion != instVersion[0])
@@ -439,7 +439,7 @@ namespace Portable_Opera_Updater
                             }
                             else
                             {
-                                FileVersionInfo testm = FileVersionInfo.GetVersionInfo($"{applicationPath}\\Update\\{instDir[d]}\\launcher.exe");
+                                FileVersionInfo testm = FileVersionInfo.GetVersionInfo($"{applicationPath}\\Update\\{instDir[d]}\\opera.exe");
                                 NewMethod6(a, b, d, testm);
                             }
                             if (checkBox5.Checked)
@@ -448,7 +448,7 @@ namespace Portable_Opera_Updater
                                 {
                                     IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
                                     IWshRuntimeLibrary.IWshShortcut link = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut($"{deskDir}\\{instDir[d]}.lnk");
-                                    link.IconLocation = $"{applicationPath}\\{instDir[d]}\\launcher.exe,0";
+                                    link.IconLocation = $"{applicationPath}\\{instDir[d]}\\opera.exe,0";
                                     link.WorkingDirectory = applicationPath;
                                     link.TargetPath = $"{applicationPath}\\{instDir[d]} Launcher.exe";
                                     link.Save();
@@ -569,8 +569,8 @@ namespace Portable_Opera_Updater
         {
             if (checkBox3.Checked)
             {
-                checkBox2.Enabled = !File.Exists($"{applicationPath}\\{instDir[4]}\\launcher.exe") && !File.Exists($"{applicationPath}\\{instDir[5]}\\launcher.exe") && !File.Exists($"{applicationPath}\\{instDir[6]}\\launcher.exe") && !File.Exists($"{applicationPath}\\{instDir[7]}\\launcher.exe");
-                checkBox1.Enabled = !File.Exists($"{applicationPath}\\{instDir[0]}\\launcher.exe") && !File.Exists($"{applicationPath}\\{instDir[1]}\\launcher.exe") && !File.Exists($"{applicationPath}\\{instDir[2]}\\launcher.exe") && !File.Exists($"{applicationPath}\\{instDir[3]}\\launcher.exe");
+                checkBox2.Enabled = !File.Exists($"{applicationPath}\\{instDir[4]}\\opera.exe") && !File.Exists($"{applicationPath}\\{instDir[5]}\\opera.exe") && !File.Exists($"{applicationPath}\\{instDir[6]}\\opera.exe") && !File.Exists($"{applicationPath}\\{instDir[7]}\\opera.exe");
+                checkBox1.Enabled = !File.Exists($"{applicationPath}\\{instDir[0]}\\opera.exe") && !File.Exists($"{applicationPath}\\{instDir[1]}\\opera.exe") && !File.Exists($"{applicationPath}\\{instDir[2]}\\opera.exe") && !File.Exists($"{applicationPath}\\{instDir[3]}\\opera.exe");
                 if (button9.Enabled)
                 {
                     button9.BackColor = Color.FromArgb(224, 224, 224);
@@ -770,11 +770,11 @@ namespace Portable_Opera_Updater
                 Directory.CreateDirectory($"{applicationPath}\\{instDir[d]}\\updates");
             }
             Thread.Sleep(500);
-            File.Copy($"{applicationPath}\\Update\\{instDir[d]}\\launcher.exe", $"{applicationPath}\\{instDir[d]}\\launcher.exe", true);
-            File.Copy($"{applicationPath}\\Update\\{instDir[d]}\\launcher.visualelementsmanifest.xml", $"{applicationPath}\\{instDir[d]}\\launcher.visualelementsmanifest.xml", true);
+            File.Copy($"{applicationPath}\\Update\\{instDir[d]}\\opera.exe", $"{applicationPath}\\{instDir[d]}\\opera.exe", true);
+            File.Copy($"{applicationPath}\\Update\\{instDir[d]}\\opera.visualelementsmanifest.xml", $"{applicationPath}\\{instDir[d]}\\opera.visualelementsmanifest.xml", true);
             File.Copy($"{applicationPath}\\Update\\{instDir[d]}\\Resources.pri", $"{applicationPath}\\{instDir[d]}\\Resources.pri", true);
-            File.Delete($"{applicationPath}\\Update\\{instDir[d]}\\launcher.exe");
-            File.Delete($"{applicationPath}\\Update\\{instDir[d]}\\launcher.visualelementsmanifest.xml");
+            File.Delete($"{applicationPath}\\Update\\{instDir[d]}\\opera.exe");
+            File.Delete($"{applicationPath}\\Update\\{instDir[d]}\\opera.visualelementsmanifest.xml");
             File.Delete($"{applicationPath}\\Update\\{instDir[d]}\\Resources.pri");
             Directory.Move($"{applicationPath}\\Update\\{instDir[d]}\\Assets", $"{applicationPath}\\{instDir[d]}\\Assets");
             Directory.Move($"{applicationPath}\\Update\\{instDir[d]}", $"{applicationPath}\\{instDir[d]}\\{testm.FileVersion}");
