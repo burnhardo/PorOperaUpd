@@ -16,7 +16,7 @@ namespace Opera_Dev_x86_Launcher
         {
             CultureInfo culture1 = CultureInfo.CurrentUICulture;
             string applicationPath = Application.StartupPath;
-            if (File.Exists(applicationPath + "\\Opera Dev x86\\Launcher.exe"))
+            if (File.Exists(applicationPath + "\\Opera Dev x86\\opera.exe"))
             {
                 var sb = new System.Text.StringBuilder();
                 string[] CommandLineArgs = Environment.GetCommandLineArgs();
@@ -57,11 +57,11 @@ namespace Opera_Dev_x86_Launcher
                     {
                         string[] Arguments2 = Arguments.Split(new char[] { '=' }, 2);
                         string Arguments3 = Arguments2[0] + "=\"" + applicationPath + "\\" + Arguments2[1].Remove(0, 1);
-                        Process.Start(applicationPath + "\\Opera Dev x86\\Launcher.exe", Arguments3);
+                        Process.Start(applicationPath + "\\Opera Dev x86\\opera.exe", Arguments3);
                     }
                     else
                     {
-                        Process.Start(applicationPath + "\\Opera Dev x86\\Launcher.exe", Arguments);
+                        Process.Start(applicationPath + "\\Opera Dev x86\\opera.exe", Arguments);
                     }
                 }
                 else
@@ -71,11 +71,11 @@ namespace Opera_Dev_x86_Launcher
                     {
                         string[] Arguments2 = Arguments.Split(new char[] { '=' }, 2);
                         string Arguments3 = Arguments2[0] + "=\"" + applicationPath + "\\" + Arguments2[1].Remove(0, 1);
-                        Process.Start(applicationPath + "\\Opera Dev x86\\Launcher.exe", Arguments3);
+                        Process.Start(applicationPath + "\\Opera Dev x86\\opera.exe", Arguments3);
                     }
                     else
                     {
-                        Process.Start(applicationPath + "\\Opera Dev x86\\Launcher.exe", Arguments);
+                        Process.Start(applicationPath + "\\Opera Dev x86\\opera.exe", Arguments);
                     }
                 }
             }

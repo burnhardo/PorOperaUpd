@@ -16,7 +16,7 @@ namespace Opera_Beta_x64_Launcher
         {
             CultureInfo culture1 = CultureInfo.CurrentUICulture;
             string applicationPath = Application.StartupPath;
-            if (File.Exists(applicationPath + "\\Opera Beta x64\\Launcher.exe"))
+            if (File.Exists(applicationPath + "\\Opera Beta x64\\opera.exe"))
             {
                 var sb = new System.Text.StringBuilder();
                 string[] CommandLineArgs = Environment.GetCommandLineArgs();
@@ -57,11 +57,11 @@ namespace Opera_Beta_x64_Launcher
                     {
                         string[] Arguments2 = Arguments.Split(new char[] { '=' }, 2);
                         string Arguments3 = Arguments2[0] + "=\"" + applicationPath + "\\" + Arguments2[1].Remove(0, 1);
-                        Process.Start(applicationPath + "\\Opera Beta x64\\Launcher.exe", Arguments3);
+                        Process.Start(applicationPath + "\\Opera Beta x64\\opera.exe", Arguments3);
                     }
                     else
                     {
-                        Process.Start(applicationPath + "\\Opera Beta x64\\Launcher.exe", Arguments);
+                        Process.Start(applicationPath + "\\Opera Beta x64\\opera.exe", Arguments);
                     }
                 }
                 else
@@ -71,11 +71,11 @@ namespace Opera_Beta_x64_Launcher
                     {
                         string[] Arguments2 = Arguments.Split(new char[] { '=' }, 2);
                         string Arguments3 = Arguments2[0] + "=\"" + applicationPath + "\\" + Arguments2[1].Remove(0, 1);
-                        Process.Start(applicationPath + "\\Opera Beta x64\\Launcher.exe", Arguments3);
+                        Process.Start(applicationPath + "\\Opera Beta x64\\opera.exe", Arguments3);
                     }
                     else
                     {
-                        Process.Start(applicationPath + "\\Opera Beta x64\\Launcher.exe", Arguments);
+                        Process.Start(applicationPath + "\\Opera Beta x64\\opera.exe", Arguments);
                     }
                 }
             }
